@@ -1,0 +1,30 @@
+{
+  "name": "checkio-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1"
+  },
+  "scripts": {
+    "w": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jshindo-gladd/checkio-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jshindo-gladd/checkio-js/issues"
+  },
+  "homepage": "https://github.com/jshindo-gladd/checkio-js#readme",
+  "description": ""
+}
