@@ -13,7 +13,7 @@
     "eslint-plugin-react": "^7.5.1"
   },
   "scripts": {
-    "w": "node index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",

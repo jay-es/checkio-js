@@ -5,7 +5,7 @@ const colors = require('./colors.js');
 let timerId = 0;
 
 const doTest = () => {
-    console.log('-'.repeat(80));
+    console.log(`${new Date().toLocaleString()} ${'-'.repeat(60)}`);
 
     try {
         const script = fs.readFileSync('./test.js', { encoding: 'UTF-8' });
