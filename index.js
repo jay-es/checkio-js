@@ -12,13 +12,13 @@ const doTest = () => {
     fs.writeFileSync(TEMP_FILE, `module.exports = () => {${script}};`);
 
     try {
-        console.log(colors.bright);
-        console.log(divider, colors.reset);
+        console.log(colors.white);
+        console.log(divider, colors.default);
         require(TEMP_FILE)(); // eslint-disable-line global-require, import/no-dynamic-require
-        console.log(colors.bgGreen, 'SUCCESS!', colors.reset);
+        console.log(colors.bgGreen, 'SUCCESS!', colors.bgDefault);
     } catch (e) {
-        console.log(colors.bgRed, 'ERROR!', colors.reset);
-        console.error(colors.yellow, e, colors.reset);
+        console.log(colors.bgRed, 'ERROR!', colors.bgDefault);
+        console.error(colors.yellow, e, colors.default);
     }
 
     fs.unlinkSync(TEMP_FILE);
