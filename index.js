@@ -3,12 +3,13 @@ const fs = require('fs');
 const path = require('path');
 const colors = require('./colors.js');
 
+const SCRIPT_FILE = path.resolve('test.codewars.js');
 const TEMP_FILE = path.resolve('tmp.js');
 let timerId = 0;
 
 const doTest = () => {
     const divider = `${new Date().toLocaleString()} ${'-'.repeat(60)}`;
-    const script = fs.readFileSync('./test.js', { encoding: 'UTF-8' });
+    const script = fs.readFileSync(SCRIPT_FILE, { encoding: 'UTF-8' });
     fs.writeFileSync(TEMP_FILE, `module.exports = () => {${script}};`);
 
     try {
@@ -27,7 +28,7 @@ const doTest = () => {
 
 doTest();
 
-fs.watch('./test.js', () => {
+fs.watch(SCRIPT_FILE, () => {
     clearTimeout(timerId);
     timerId = setTimeout(doTest, 25);
 });
