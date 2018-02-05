@@ -12,6 +12,8 @@ const Test = {
   it: (title, fn) => fn(),
 };
 
+const { describe, it } = Test;
+
 // ----------------------------------------------------------------
 /* eslint-disable */
 
