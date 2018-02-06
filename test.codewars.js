@@ -13,7 +13,6 @@ const Test = {
 };
 
 const { describe, it } = Test;
-const { describe, it } = Test; // eslint-disable-line no-unused-vars
 
 // ----------------------------------------------------------------
 /* eslint-disable */
