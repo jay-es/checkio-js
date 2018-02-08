@@ -10,7 +10,7 @@ let timerId = 0;
 const doTest = () => {
     const divider = `${new Date().toLocaleString()} ${'-'.repeat(60)}`;
     const script = fs.readFileSync(SCRIPT_FILE, { encoding: 'UTF-8' });
-    fs.writeFileSync(TEMP_FILE, `module.exports = () => {${script}};`);
+    fs.writeFileSync(TEMP_FILE, `module.exports = () => {${script}\n};`);
 
     try {
         console.log(colors.white);
