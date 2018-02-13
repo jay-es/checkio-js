@@ -10,8 +10,14 @@ let timerId = 0;
 
 const doTest = () => {
   const divider = `${new Date().toLocaleString()} ${'-'.repeat(60)}`;
-  const script = babel.transformFileSync(SCRIPT_FILE).code;
-  fs.writeFileSync(TEMP_FILE, `module.exports = () => {${script}\n};`);
+
+  try {
+    const script = babel.transformFileSync(SCRIPT_FILE).code;
+    fs.writeFileSync(TEMP_FILE, `module.exports = () => {${script}\n};`);
+  } catch (e) {
+    console.error(colors.red, e.toString(), colors.default);
+    return;
+  }
 
   try {
     console.log(colors.white);
