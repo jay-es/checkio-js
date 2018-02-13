@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+const babel = require('babel-core');
 const fs = require('fs');
 const path = require('path');
 const colors = require('./colors.js');
@@ -9,7 +10,7 @@ let timerId = 0;
 
 const doTest = () => {
   const divider = `${new Date().toLocaleString()} ${'-'.repeat(60)}`;
-  const script = fs.readFileSync(SCRIPT_FILE, { encoding: 'UTF-8' });
+  const script = babel.transformFileSync(SCRIPT_FILE).code;
   fs.writeFileSync(TEMP_FILE, `module.exports = () => {${script}\n};`);
 
   try {
