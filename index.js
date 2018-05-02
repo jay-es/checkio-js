@@ -9,8 +9,6 @@ const TEMP_FILE = path.resolve('tmp.js');
 let timerId = 0;
 
 const doTest = () => {
-  const divider = `${new Date().toLocaleString()} ${'-'.repeat(60)}`;
-
   try {
     const script = babel.transformFileSync(SCRIPT_FILE).code;
     fs.writeFileSync(TEMP_FILE, `module.exports = () => {${script}\n};`);
@@ -21,7 +19,7 @@ const doTest = () => {
 
   try {
     console.log(colors.white);
-    console.log(divider, colors.default);
+    console.log(new Date().toLocaleString(), '-'.repeat(60), colors.default);
     require(TEMP_FILE)(); // eslint-disable-line global-require, import/no-dynamic-require
     console.log(colors.bgGreen, 'SUCCESS!', colors.bgDefault);
   } catch (e) {
