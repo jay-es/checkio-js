@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"time"
 
-	"./ansi"
-	"./kata"
+	"../ansi"
+	"../kata"
 )
 
 func main() {

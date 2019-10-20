@@ -10,7 +10,7 @@ const cb = () => {
   onGoing = true;
   console.log(new Date());
 
-  exec('go run main.go', (err, stdout, stderr) => {
+  exec('go run ./main/main.go', (err, stdout, stderr) => {
     onGoing = false;
 
     if (err) console.error(err.message);
