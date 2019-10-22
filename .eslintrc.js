@@ -2,7 +2,7 @@ module.exports = {
   env: {
     node: true
   },
-  extends: 'airbnb',
+  extends: 'airbnb-base',
   rules: {
     indent: 0, // ["error", 4],
     'no-continue': 0,
