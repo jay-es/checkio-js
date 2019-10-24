@@ -1,0 +1,5 @@
+reporter: 'min'
+require: 'ts-node/register'
+spec: './ts-codewars/*.ts'
+watch: true
+watch-extensions: 'ts'

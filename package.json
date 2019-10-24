@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@typescript-eslint/parser": "^2.5.0",
     "babel-preset-env": "^1.6.1",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -10,9 +12,13 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
     "prettier": "^1.18.2",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.3.4000"
   },
   "scripts": {
-    "start": "node index.js"
+    "start:go": "cd go-codewars && go run watch.go",
+    "start:js": "node index.js",
+    "start:ts": "mocha --config ts-codewars/.mocharc.yml"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +33,10 @@
   "homepage": "https://github.com/jshindo-gladd/checkio-js#readme",
   "description": "",
   "dependencies": {
-    "babel-core": "^6.26.0"
+    "@types/chai": "^4.2.4",
+    "@types/mocha": "^5.2.7",
+    "babel-core": "^6.26.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
   }
 }
