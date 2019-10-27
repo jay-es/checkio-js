@@ -1,0 +1,14 @@
+package kata_test
+
+import (
+	. "../kata"
+
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+)
+
+var _ = Describe("opposite function", func() {
+	It("should invert number", func() {
+		Expect(Opposite(1)).To(Equal(-1))
+	})
+})

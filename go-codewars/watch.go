@@ -6,19 +6,25 @@ import (
 	"os/exec"
 	"time"
 
+	"./ansi"
 	"github.com/fsnotify/fsnotify"
 	"github.com/shiena/ansicolor"
 )
 
 var watchTarget = "./kata"
-var exeFilepath = "./main/main.go"
+var testTarget = "./kata_test"
+var testArgs = []string{
+	"test",
+	testTarget,
+	"-count=1", // no-cache
+}
 
 func run() {
 	fmt.Printf("%v\n", time.Now())
-	out, err := exec.Command("go", "run", exeFilepath).CombinedOutput()
+	out, err := exec.Command("go", testArgs...).CombinedOutput()
 
 	if err != nil {
-		errStr := fmt.Sprintf("\x1b[91m%s\x1b[0m\n", err)
+		errStr := fmt.Sprintf("%s%s%s\n", ansi.LightRed, err, ansi.Reset)
 		out = append([]byte(errStr), out...)
 	}
 
@@ -67,7 +73,7 @@ func main() {
 	}
 
 	if len(os.Args) > 2 {
-		exeFilepath = os.Args[2]
+		testTarget = os.Args[2]
 	}
 
 	watch()

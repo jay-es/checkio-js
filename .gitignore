@@ -4,5 +4,5 @@ npm-debug.log
 package-lock.json
 yarn-error.log
 
-go-codewars/kata/*.go
+go-codewars/**/kata*.go
 ts-codewars/*.ts

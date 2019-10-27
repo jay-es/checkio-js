@@ -1,5 +1,5 @@
 package kata
 
-func Sum(x, y int) int {
-	return x + y
+func Opposite(value int) int {
+	return -value
 }
