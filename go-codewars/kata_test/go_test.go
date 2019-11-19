@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func TestHoge(t *testing.T) {
+func TestKata(t *testing.T) {
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "Kata Suite")
 }

@@ -17,6 +17,7 @@ var testArgs = []string{
 	"test",
 	testTarget,
 	"-count=1", // no-cache
+	"-v",
 }
 
 func run() {
@@ -39,7 +40,10 @@ func watch() {
 		fmt.Println("ERROR", err)
 	}
 
-	if err := watcher.Add(watchTarget); err != nil {
+	if err = watcher.Add(watchTarget); err != nil {
+		fmt.Println("ERROR", err)
+	}
+	if err = watcher.Add(testTarget); err != nil {
 		fmt.Println("ERROR", err)
 	}
 
@@ -53,8 +57,10 @@ func watch() {
 			// watch for events
 			case <-watcher.Events:
 				watcher.Remove(watchTarget)
+				watcher.Remove(testTarget)
 				run()
 				watcher.Add(watchTarget)
+				watcher.Add(testTarget)
 
 			// watch for errors
 			case err := <-watcher.Errors:
